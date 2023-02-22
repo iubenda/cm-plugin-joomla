@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.7" type="plugin" group="system" method="upgrade">
+  <name>PLG_SYSTEM_CONSENTMANAGER</name>
+  <author>consentmanager</author>
+  <creationDate>June 2021</creationDate>
+  <copyright>Copyright (C) 2021 Holder. All rights reserved.</copyright>
+  <license>GNU General Public License</license>
+  <authorEmail>support@consentmanager.net</authorEmail>
+  <authorUrl>https://www.consentmanager.de</authorUrl>
+  <version>1.0.0</version>
+  <description>PLG_SYSTEM_CONSENTMANAGER_DESC</description>
+  <scriptfile>script.php</scriptfile>
+  <files>
+    <filename plugin="consentmanager">consentmanager.php</filename>
+  </files>
+  <languages>
+    <language tag="en-GB">language/en-GB/en-GB.plg_system_consentmanager.ini</language>
+    <language tag="en-GB">language/en-GB/en-GB.plg_system_consentmanager.sys.ini</language>
+  </languages>
+  <updateservers>
+    <server type="extension" priority="2" name="consentmanager">https://plugins.consentmanager.net/joomla/updates.xml</server>
+  </updateservers>
+  <config>
+	<fields name="params">
+	  <fieldset name="basic">
+  		<field
+  			name="cmp_id"
+  			type="text"
+  			default=""
+  			label="CMP_ID_FIELD_LABEL"
+  			description="CMP_ID_FIELD_DESC"
+            hint="CMP_ID_FIELD_PLACEHOLDER"
+            required="required"
+  		/>
+      <field 
+        name="cmp_id_note" 
+        type="note" 
+        label="CMP_ID_NOTE_FIELD_LABEL" 
+        description="CMP_ID_NOTE_FIELD_DESC"
+      />
+      <field name="blocking_mode" type="radio" 
+        class="btn-group btn-group-yesno" 
+        default="semi_automatic"
+        label="BLOCKING_MODE_FIELD_LABEL"
+        description="BLOCKING_MODE_FIELD_DESC"
+        >
+        <option value="automatic">AUTOMATIC_LABEL</option>
+        <option value="semi_automatic">SEMI_AUTOMATIC_LABEL</option>
+      </field>
+      <field 
+        name="custom_code" 
+        type="textarea" 
+        label="CUSTOM_CODE_FIELD_LABEL" 
+        description="CUSTOM_CODE_FIELD_DESC"
+        rows="10"
+        cols="40"
+        class="input-xlarge"
+        filter="raw"
+      />
+	  </fieldset>
+	</fields>
+  </config>
+</extension>
